@@ -63,12 +63,10 @@ Over the course of the EuroBioc2026 Tidyomics Hackathon, our team contributed to
 
 1. Implementing functional enhancements to the DFplyr and tidybulk packages
 2. Resolving critical bugs through targeted pull requests
-3. Developing helper functions designed to make annDataR more 'tidy'
+3. Developing tidy-compatible functions to manipulate annDataR objects
 4. Producing a comprehensive and stable vignette for tidySingleCellExperiment
 
  Through these combined efforts, we have 
- 
- lowered the barrier to entry for multi-omic analysis, ensuring that researchers can transition seamlessly between different data modalities within a unified, tidy framework.
 
 # Results
 

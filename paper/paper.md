@@ -1,29 +1,50 @@
 ---
-title: 'Eurobioc2026 Projects Report'
-title_short: 'Projects for improving bioconductor interoperability'
+title: 'Maintaining and refining the tidyomics ecosystem: enhancing core packages and interoperability for EuroBioc2026'
+title_short: 'Enhancing Tidyomics'
 tags:
   - Bioconductor
   - bioinformatics
   - R
   - Tidyomics
-  - CUDA
-  - Docker
-  - Rapp
 authors:
-  - name: First Author
+  - name: Carissa Chen
+    orcid: 0000-0002-9225-7086
     affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
+    role: Formal Analysis, Writing – original draft
+  - name: Marco Geigges
+    orcid: 0000-0001-9071-5162
     affiliation: 2
+    role: Formal Analysis, Writing – review & editing
+  - name: Juan Henao
+    orcid: 0000-0003-0783-1432
+    affiliation: 3
+    role: Conceptualization, Formal Analysis, Writing – review & editing
+  - name: Michael Love
+    orcid: 0000-0000-0000-0000
+    affiliation: 4
     role: Conceptualization, Writing – review & editing
+  - name: Stevie Pederson
+    orcid: 0000-0001-8197-3303
+    affiliation: 5
+    role: Formal Analysis, Writing – review & editing, Project Administration
+  - name: Jasper Spitzer
+    orcid: 0000-0001-9696-2092
+    affiliation: 6
+    role: Formal Analysis, Writing – review & editing
 affiliations:
-  - name: First Affiliation
+  - name: Department of Statistical Sciences, University of Padova, Italy
     index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
+  - name: Friedrich Miescher Institute for Biomedical Research, Switzerland
     index: 2
-date: 1 June 2026
+  - name: Computational Health Center, Helmholtz Munich, Neuherberg, Germany
+    index: 3
+  - name: Affiliation
+    index: 4
+  - name: Black Ochre Data Labs, Indigenous Genomics, The Kids Research Institute, Australia
+    index: 5
+  - name: Affiliation
+    index: 6
+date: 2 June 2026
 cito-bibliography: paper.bib
 event: Eurobioc 2026
 biohackathon_name: "Eurobioc 2026"
@@ -33,115 +54,21 @@ biohackathon_location: "Turku, Finland 2026"
 git_url: https://github.com/BiocCodingCollaborations/EuroBioc2026_Biohackrxiv_submission
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: First Author \emph{et al.}
+authors_short: Tidyomics Hackathon Team
 ---
-
 
 # Introduction
 
-As part of the BioHackathon Europe 2023, we here report...
+Over the course of the EuroBioc2026 Tidyomics Hackathon, our team contributed to the tidyomics ecosystem by refining core package stability, improving current documentation and expanding interoperability for annaDataR within the tidyverse. Our primary objectives included:
 
-## Meeting information
+1. Implementing functional enhancements to the DFplyr and tidybulk packages
+2. Resolving critical bugs through targeted pull requests
+3. Developing helper functions designed to make annDataR more 'tidy'
+4. Producing a comprehensive and stable vignette for tidySingleCellExperiment
 
-If you want to submit a preprint to BioHackrXiv, first check if your meeting is registered. You can find a list
-of meetings [here](https://index.biohackrxiv.org/meetings). If your meeting is missing, please contact your meeting
-organizers. The above list also provides information on the YAML fields with information about the meeting.
-
-The following fields need to be given:
-
-```YAML
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
-git_url: https://github.com/yourOrganization/your_report_repo
-```
-
-The [BioHackrXiv meeting pages](https://index.biohackrxiv.org/meetings) provide content to use for the first
-three fields. The `git_url:` field must have the link to the GitHub repository with your preprint (draft).
-
-## Author information
-
-Information about the authors is given in the [YAML](https://en.wikipedia.org/wiki/YAML) format at the top of this template.
-For authors you provide their names, their affiliations. That is the minimum, but as BioHackrXiv is moving to a situation
-where more metadata is shared, and used by, for example, EuropePMC, adding additional information ie encouraged.
-
-BioHackathons is about hacking together, and the minimal number of authors for reports is two. This makes a minimal example
-look like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-  - name: Last Author
-    affiliation: 2
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    index: 2
-```
-
-### Author identifiers
-
-Ideally, authors provide their [ORCID](https://orcid.org/) identifier. For affiliations, It is added with the `orcid:` field.
-So, and author record would look like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-```
-
-### Research Organization Registry identifiers
-
-Matching the author identifier, the affiliations can be further specified with the
-[Research Organization Registry](https://ror.org/) (ROR) identifier.
-For example, this is the affiliation identifier can be added with the `ror:` field:
-
-```yaml
-affiliations:
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
-
-### Contributor Role Taxonomy
-
-A last feature since is minimal support for the Contributor Role Taxonomy (CRediT). You
-can specify the role of authors in writing the report with the `role:` field. However,
-the authors are responsible for selection the right terms from [CRediT](https://credit.niso.org/).
-An example looks like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-    role: Conceptualization, Writing – review & editing
-```
-
-### A full examples
-
-A full example then has this structure:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
-    affiliation: 2
-    role: Conceptualization, Writing – review & editing
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
+ Through these combined efforts, we have 
+ 
+ lowered the barrier to entry for multi-omic analysis, ensuring that researchers can transition seamlessly between different data modalities within a unified, tidy framework.
 
 # Formatting
 
@@ -233,16 +160,13 @@ Possible CiTO typing annotation include:
 * updates
 * citation: generic citation
 
-
 # Results
 
 
 # Discussion
 
-...
-
 ## Acknowledgements
 
-...
+Gemini CLI was used to summarise the results and outcomes in the preparation of this manuscript. Writing was reviewed by all authors before publication.
 
 ## References

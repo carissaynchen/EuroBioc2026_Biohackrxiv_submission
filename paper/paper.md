@@ -70,6 +70,12 @@ Over the course of the EuroBioc2026 Tidyomics Hackathon, our team contributed to
  
  lowered the barrier to entry for multi-omic analysis, ensuring that researchers can transition seamlessly between different data modalities within a unified, tidy framework.
 
+# Results
+
+## Towards tidyomics for AnnData objects
+In this subproject, the aim was to begin extending tidyomics to AnnData objects. select() was chosen as the first tidyverse expression to implement. analyze_query_scope_select.AnnData() was created to analyze the scope of a select() operation based on the selected columns in AnnData objects, providing a foundation for the implementation of a select.AnnData() function. At present, it supports only obs, var, and layers, but it can be extended further. select.AnnData() will be the next function to be developed.
+
+
 # Formatting
 
 This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
